@@ -37,7 +37,7 @@
         <!-- MENU & TOGGLES WRAPPER -->
         <div class="flex items-center space-x-4">
           <!-- Desktop Menu -->
-          <ul class="hidden md:flex space-x-8 text-lg items-center">
+          <ul class="hidden lg:flex space-x-8 text-lg items-center">
             <li>
               <a
                 href="#home"
@@ -80,7 +80,7 @@
           </ul>
 
           <!-- MOBILE MENU BUTTON -->
-          <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+          <button id="menuBtn" class="lg:hidden text-3xl">☰</button>
         </div>
       </div>
     </nav>
@@ -88,7 +88,7 @@
     <!-- MOBILE MENU -->
     <div
       id="mobileMenu"
-      class="fixed right-0 top-0 h-full w-1/2 bg-white dark:bg-gray-800 p-6 shadow-xl transform translate-x-full transition-transform duration-300 md:hidden z-50 flex flex-col overflow-y-auto"
+      class="fixed right-0 top-0 h-full w-1/2 bg-white dark:bg-gray-800 p-6 shadow-xl transform translate-x-full transition-transform duration-300 lg:hidden z-50 flex flex-col overflow-y-auto"
     >
       <div class="flex items-center justify-between mb-8">
         <!-- close button -->
@@ -236,7 +236,7 @@
         </h2>
 
         <!-- SLIDER MOBILE -->
-        <div class="block md:hidden relative max-w-xl mx-auto overflow-hidden">
+        <div class="block lg:hidden relative max-w-xl mx-auto overflow-hidden">
           <!-- Wrapper -->
           <div
             id="serviceWrapper"
@@ -244,7 +244,9 @@
           >
             <!-- Slide 1 -->
             <div class="min-w-full p-2">
-              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div
+                class="bg-white rounded-xl max-w-sm mx-auto shadow-md overflow-hidden"
+              >
                 <img
                   src="foto/IMG_20251212_121342 (1) (1).jpg"
                   class="w-full h-64 object-cover"
@@ -278,7 +280,9 @@
 
             <!-- Slide 2 -->
             <div class="min-w-full p-2">
-              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div
+                class="bg-white max-w-sm mx-auto rounded-lg shadow-md overflow-hidden"
+              >
                 <img
                   src="foto/IMG_20251212_122042.jpg"
                   class="w-full h-64 object-cover"
@@ -311,7 +315,9 @@
 
             <!-- Slide 3 -->
             <div class="min-w-full p-2">
-              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div
+                class="bg-white max-w-sm mx-auto rounded-lg shadow-md overflow-hidden"
+              >
                 <img
                   src="foto/IMG_20251212_122055.jpg"
                   class="w-full h-64 object-cover"
@@ -363,7 +369,7 @@
 
         <!-- GRID DESKTOP -->
 
-        <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="hidden lg:grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <img
               src="foto/IMG_20251212_121342 (1) (1).jpg"
@@ -665,7 +671,7 @@
     </section>
 
     <!-- gallery -->
-    <section class="text-gray-700 body-font" id="gallery">
+    <section class="text-gray-700 body-font">
       <div
         class="flex justify-center text-3xl font-bold text-[#4E342E] text-center py-10"
       >
@@ -673,7 +679,7 @@
       </div>
 
       <!-- MOBILE SLIDER 9:16 -->
-      <div class="relative overflow-hidden sm:block md:hidden max-w-xs mx-auto">
+      <div class="relative overflow-hidden sm:block lg:hidden max-w-xs mx-auto">
         <div
           id="gallerySlider"
           class="flex transition-transform duration-700 ease-out"
@@ -724,7 +730,7 @@
 
       <!-- DESKTOP GRID (md+) -->
       <div
-        class="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center"
+        class="hidden lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center"
       >
         <div class="group relative">
           <img
