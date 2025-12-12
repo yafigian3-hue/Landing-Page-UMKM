@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {},
+        plugins: [],
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Landing Page Kopi</title>
+  </head>
+  <body>
+    <div
+      id="menuOverlay"
+      class="fixed inset-0 bg-black opacity-50 hidden transition-opacity duration-300 ease-in-out z-10"
+    ></div>
+
+    <!-- NAVBAR -->
+    <nav
+      class="sticky top-0 w-full backdrop-blur bg-white/70 dark:bg-gray-800/40 z-50 shadow-lg transition-colors duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-5 flex justify-between items-center h-16"
+      >
+        <!-- BRAND -->
+        <a href="#home" class="text-[#4E342E] text-2xl font-bold"
+          >Contoh Landing Page</a
+        >
+
+        <!-- MENU & TOGGLES WRAPPER -->
+        <div class="flex items-center space-x-4">
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex space-x-8 text-lg items-center">
+            <li>
+              <a
+                href="#home"
+                class="relative flex items-center px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E]"
+                >Home</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#services"
+                class="relative flex items-center px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E]"
+                >Services</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#aboutus"
+                class="relative flex items-center px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E]"
+                >About us</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#testimoni"
+                class="relative flex items-center px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E]"
+                >Testimoni</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#contactUs"
+                class="relative flex items-center px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E]"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+
+          <!-- MOBILE MENU BUTTON -->
+          <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div
+      id="mobileMenu"
+      class="fixed right-0 top-0 h-full w-1/2 bg-white dark:bg-gray-800 p-6 shadow-xl transform translate-x-full transition-transform duration-300 md:hidden z-50 flex flex-col overflow-y-auto"
+    >
+      <div class="flex items-center justify-between mb-8">
+        <!-- close button -->
+        <button id="closeMenu" class="absolute top-4 right-4 text-3xl p-1">
+          ☰
+        </button>
+      </div>
+
+      <!-- MENU LIST -->
+      <ul class="space-y-4 text-xl">
+        <li>
+          <a
+            href="#home"
+            class="mobile-nav relative inline-block px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E] dark:hover:text-[#4E342E]"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#services"
+            class="mobile-nav relative inline-block px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E] dark:hover:text-[#4E342E]"
+          >
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#aboutus"
+            class="mobile-nav relative inline-block px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E] dark:hover:text-[#4E342E]"
+          >
+            About us
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#testimoni"
+            class="mobile-nav relative inline-block px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E] dark:hover:text-[#4E342E]"
+          >
+            Testimoni
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#contactUs"
+            class="mobile-nav relative inline-block px-1 pb-1 after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#4E342E] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#4E342E] dark:hover:text-[#4E342E]"
+          >
+            Contact Us
+          </a>
+        </li>
+      </ul>
+
+      <div
+        class="fixed bottom-10 left-0 right-0 p-4 border-t border-gray-300 text-center text-sm text-gray-600 dark:text-gray-400"
+      >
+        <p class="font-medium hover:text-blue-500 transition">
+          Yafi Gian · Web Developer
+        </p>
+        <p class="mt-1 opacity-80">© 2025 — landing-page, Contoh websites.</p>
+
+        <div class="flex justify-center gap-6 mt-4">
+          <!-- GitHub OFFICIAL -->
+          <a
+            href="https://github.com/yafigian3-hue"
+            target="_blank"
+            class="hover:opacity-70 transition"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-2c-3.3.7-4-1.4-4-1.4a3.1 
+                      3.1 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.5 2.5 0 0 1 1.9 
+                      1.3 2.6 2.6 0 0 0 3.5 1 2.6 2.6 0 0 1 .8-1.6c-2.7-.3-5.5-1.3-5.5-6a4.6 
+                      4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.1s1-.3 3.3 1.2a11.3 
+                      11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 
+                      .1 3.1 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6a2.9 
+                      2.9 0 0 1 .8 2.2v3.3c0 .3.2.6.8.5A12 12 0 0 0 12 .3z"
+              />
+            </svg>
+          </a>
+
+          <!-- WhatsApp OFFICIAL -->
+          <a
+            href="https://wa.me/6283896738779"
+            target="_blank"
+            class="hover:opacity-70 transition"
+          >
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor">
+              <path
+                d="M16 3a13 13 0 0 0-11.3 19.5L3 29l6-1.6A13 
+                      13 0 1 0 16 3zm7.7 18.2c-.3.9-1.7 1.6-2.4 
+                      1.6-.6 0-1.3 0-2.2-.3a18.3 18.3 0 0 1-3.5-1.6 
+                      16.1 16.1 0 0 1-5-5c-.2-.3-1.2-1.7-1.2-3.2s.7-2.3 1-2.6c.3-.3.6-.4.8-.4h.6c.2 
+                      0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5s-.2.4-.3.6-.2.2-.3.4-.1.3 
+                      0 .5a10.6 10.6 0 0 0 2 2.7 9 9 0 0 0 2.9 
+                      1.9c.2.1.4.1.6 0l.9-1c.2-.3.4-.3.7-.2l1.8.9c.2.1.6.3.7.4s.2.3.1.6z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- hero seciton -->
+    <div class="relative w-full h-[320px]" id="home">
+      <div class="absolute inset-0 opacity-90">
+        <img
+          src="foto/wq (1).jpg"
+          alt="Background Image"
+          class="object-cover object-center w-full h-full"
+        />
+      </div>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div
+        class="absolute inset-9 flex flex-col md:flex-row items-center justify-between"
+      >
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <div class="relative z-10">
+            <h1
+              class="text-white font-bold text-4xl md:text-5xl leading-tight mb-2"
+            >
+              Kopi Yafi
+            </h1>
+            <p class="font-mono text-white font-semibold text-xl mb-8 mt-4">
+              Nikmati Kopi Lokal, Bangkitkan Semangat Nasional
+            </p>
+            <a
+              href="#contactUs"
+              class="px-6 py-3 bg-[#4E342E] text-white font-medium rounded-full hover:bg-[#6D4C41] transition duration-200"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- our services section -->
+    <section class="py-10" id="services">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-[#4E342E] mb-8 text-center">
+          Our Services
+        </h2>
+
+        <!-- SLIDER MOBILE -->
+        <div class="block md:hidden relative max-w-xl mx-auto overflow-hidden">
+          <!-- Wrapper -->
+          <div
+            id="serviceWrapper"
+            class="flex transition-transform duration-700 ease-out"
+          >
+            <!-- Slide 1 -->
+            <div class="min-w-full p-2">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img
+                  src="foto/IMG_20251212_121342 (1) (1).jpg"
+                  class="w-full h-64 object-cover"
+                  alt="Kopi Arabica"
+                />
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-medium text-gray-800 mb-2">
+                    Kopi Arabica
+                  </h3>
+                  <p class="text-gray-700 text-base">
+                    Kopi Arabica Kami menyediakan biji Arabica premium dari
+                    dataran tinggi pilihan. Proses panen yang cermat
+                    menghasilkan aroma bunga dan rasa fruity yang kompleks,
+                    sempurna untuk espresso atau manual brew kelas atas. Jaminan
+                    Kualitas Sangrai.
+                  </p>
+                  <div class="flex flex-col items-center p-3">
+                    <p class="text-xl font-bold text-gray-800 mb-3">
+                      Rp.100.000
+                    </p>
+                    <a
+                      href="https://wa.me/083896738779"
+                      class="border border-[#4E342E] text-[#4E342E] hover:bg-[#4E342E] hover:text-white rounded-lg px-4 py-2 text-sm"
+                    >
+                      Pesan Arabica sekarang
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full p-2">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img
+                  src="foto/IMG_20251212_122042.jpg"
+                  class="w-full h-64 object-cover"
+                  alt="Kopi Robusta"
+                />
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-medium text-gray-800 mb-2">
+                    Kopi Robusta
+                  </h3>
+                  <p class="text-gray-700 text-base">
+                    Kopi Robusta Solusi kopi dengan body yang kuat, pekat, dan
+                    kafein tinggi—cocok untuk campuran susu atau sebagai booster
+                    energi. Kami menjamin konsistensi rasa dan harga yang
+                    efisien untuk kebutuhan warung kopi dan hotel Anda.
+                  </p>
+                  <div class="flex flex-col items-center p-3">
+                    <p class="text-xl font-bold text-gray-800 mb-3">
+                      Rp.150.000
+                    </p>
+                    <a
+                      href="https://wa.me/083896738779"
+                      class="border border-[#4E342E] text-[#4E342E] hover:bg-[#4E342E] hover:text-white rounded-lg px-4 py-2 text-sm"
+                    >
+                      Pesan Robusta sekarang
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full p-2">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img
+                  src="foto/IMG_20251212_122055.jpg"
+                  class="w-full h-64 object-cover"
+                  alt="Kopi Liberica"
+                />
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-medium text-gray-800 mb-2">
+                    Kopi Libercia
+                  </h3>
+                  <p class="text-gray-700 text-base">
+                    Kopi Libercia Rasakan pengalaman unik dengan Libercia.
+                    Karakteristik rasa smokey dan woody yang jarang ditemukan
+                    memberikan profil rasa yang eksotis. Ideal untuk roaster
+                    yang ingin menawarkan menu spesial dan berbeda dari yang
+                    lain.
+                  </p>
+                  <div class="flex flex-col items-center p-3">
+                    <p class="text-xl font-bold text-gray-800 mb-3">
+                      Rp.200.000
+                    </p>
+                    <a
+                      href="https://wa.me/083896738779"
+                      class="border border-[#4E342E] text-[#4E342E] hover:bg-[#4E342E] hover:text-white rounded-lg px-4 py-2 text-sm"
+                    >
+                      Pesan Libercia sekarang
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prev Button (gunakan entitas HTML untuk tanda panah agar Prettier aman) -->
+          <button
+            id="servicePrev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#4E342E] text-white px-3 py-2 rounded-full shadow"
+          >
+            &lsaquo;
+          </button>
+
+          <!-- Next Button -->
+          <button
+            id="serviceNext"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#4E342E] text-white px-3 py-2 rounded-full shadow"
+          >
+            &rsaquo;
+          </button>
+        </div>
+
+        <!-- GRID DESKTOP -->
+
+        <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="foto/IMG_20251212_121342 (1) (1).jpg"
+              alt="wheat flour grinding"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">
+                Kopi Arabica
+              </h3>
+              <p class="text-gray-700 text-base">
+                Kopi Arabica Kami menyediakan biji Arabica premium dari dataran
+                tinggi pilihan. Proses panen yang cermat menghasilkan aroma
+                bunga dan rasa fruity yang kompleks, sempurna untuk espresso
+                atau manual brew kelas atas. Jaminan Kualitas Sangrai.
+              </p>
+
+              <!-- harga & tombol pesan sekarng -->
+              <div class="flex flex-col items-center p-3">
+                <p
+                  class="text-xl font-bold text-gray-800 mr-4 hover:underline mb-3"
+                >
+                  Rp.100.000
+                </p>
+
+                <a
+                  href="https://wa.me/083896738779"
+                  class="text-success bg-neutral-primary border border-[#4E342E] hover:bg-[#4E342E] hover:text-white focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none"
+                >
+                  Pesan Arabica sekarang
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="foto/IMG_20251212_122042.jpg"
+              alt="Coffee"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">
+                Kopi Robusta
+              </h3>
+              <p class="text-gray-700 text-base">
+                Kopi Robusta Solusi kopi dengan body yang kuat, pekat, dan
+                kafein tinggi—cocok untuk campuran susu atau sebagai booster
+                energi. Kami menjamin konsistensi rasa dan harga yang efisien
+                untuk kebutuhan warung kopi dan hotel Anda.
+              </p>
+
+              <!-- harga & tombol pesan sekarng -->
+              <div class="flex flex-col items-center p-3">
+                <p
+                  class="text-xl font-bold text-gray-800 mr-4 hover:underline mb-3"
+                >
+                  Rp.150.000
+                </p>
+
+                <a
+                  href="https://wa.me/083896738779"
+                  class="text-success bg-neutral-primary border border-[#4E342E] hover:bg-[#4E342E] hover:text-white focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none"
+                >
+                  Pesan Robusta sekarang
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="foto/IMG_20251212_122055.jpg"
+              alt="Coffee"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-medium text-gray-800 mb-2">
+                Kopi Libercia
+              </h3>
+              <p class="text-gray-700 text-base">
+                Kopi Libercia Rasakan pengalaman unik dengan Libercia.
+                Karakteristik rasa smokey dan woody yang jarang ditemukan
+                memberikan profil rasa yang eksotis. Ideal untuk roaster yang
+                ingin menawarkan menu spesial dan berbeda dari yang lain.
+              </p>
+
+              <!-- harga & tombol pesan sekarng -->
+              <div class="flex flex-col items-center p-3">
+                <p
+                  class="text-xl font-bold text-gray-800 mr-4 hover:underline mb-3"
+                >
+                  Rp.200.000
+                </p>
+
+                <a
+                  href="https://wa.me/083896738779"
+                  class="text-success bg-neutral-primary border border-[#4E342E] hover:bg-[#4E342E] hover:text-white focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none"
+                >
+                  Pesan Libercia sekarang
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about us -->
+    <section id="aboutus">
+      <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+          <div class="max-w-lg">
+            <h2 class="text-3xl font-bold text-[#4E342E] mb-8 text-center">
+              About Us
+            </h2>
+            <p class="mt-4 text-gray-700 text-lg">
+              Kopi Yafi didedikasikan untuk menghadirkan kopi terbaik, mulai
+              dari kebun hingga cangkir Anda. Kami menjamin kualitas green bean
+              premium dan proses roasting yang konsisten. Misi kami sederhana:
+              menyediakan kopi dengan harga kompetitif, pengiriman cepat, dan
+              layanan konsultasi yang siap membantu pertumbuhan bisnis kopi
+              Anda.
+            </p>
+          </div>
+          <div class="mt-12 md:mt-0">
+            <img
+              src="foto/c1531dd5463ab88355619ccc4d7da4b9 (1).jpg"
+              alt="About Us Image"
+              class="object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why us  -->
+    <section class="text-gray-700 body-font mt-10">
+      <div
+        class="flex justify-center text-3xl font-bold text-[#4E342E] text-center"
+      >
+        Why Us?
+      </div>
+      <div class="container px-5 py-12 mx-auto">
+        <div class="flex flex-wrap text-center justify-center">
+          <div class="p-4 md:w-1/4 sm:w-1/2">
+            <div
+              class="px-4 py-6 transform transition duration-500 hover:scale-110"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp"
+                  class="w-32 mb-3"
+                />
+              </div>
+              <h2 class="title-font font-regular text-2xl text-gray-700">
+                Roasting Terkontrol
+              </h2>
+            </div>
+          </div>
+
+          <div class="p-4 md:w-1/4 sm:w-1/2">
+            <div
+              class="px-4 py-6 transform transition duration-500 hover:scale-110"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp"
+                  class="w-32 mb-3"
+                />
+              </div>
+              <h2 class="title-font font-regular text-2xl text-gray-700">
+                Harga Kompetitif UMKM
+              </h2>
+            </div>
+          </div>
+
+          <div class="p-4 md:w-1/4 sm:w-1/2">
+            <div
+              class="px-4 py-6 transform transition duration-500 hover:scale-110"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
+                  class="w-32 mb-3"
+                />
+              </div>
+              <h2 class="title-font font-regular text-2xl text-gray-700">
+                Pengiriman Cepat & Tepat Waktu
+              </h2>
+            </div>
+          </div>
+
+          <div class="p-4 md:w-1/4 sm:w-1/2">
+            <div
+              class="px-4 py-6 transform transition duration-500 hover:scale-110"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp"
+                  class="w-32 mb-3"
+                />
+              </div>
+              <h2 class="title-font font-regular text-2xl text-gray-700">
+                Konsultasi Profil Rasa
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimoni -->
+
+    <section id="testimoni">
+      <h2 class="text-3xl font-bold text-center text-[#4E342E] mb-6">
+        Testimoni Pelanggan
+      </h2>
+
+      <div class="relative max-w-xl mx-auto overflow-hidden">
+        <!-- Wrapper -->
+        <div
+          id="testimonialWrapper"
+          class="flex transition-transform duration-700 ease-out"
+        >
+          <!-- TESTI 1 - Harga Murah -->
+          <div class="min-w-full p-6">
+            <div class="bg-white rounded-xl shadow-md p-6">
+              <div class="text-yellow-500 text-xl mb-3">★★★★★</div>
+              <p class="text-gray-700 italic mb-6">
+                "Harga kopinya bener-bener murah dibanding tempat lain, tapi
+                kualitasnya tetap premium. Saya nggak nyangka bisa dapet rasa
+                seenak ini di harga segini. Mantap!"
+              </p>
+
+              <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gray-300"></div>
+                <div class="ml-3">
+                  <h4 class="font-bold">Rian S.</h4>
+                  <p class="text-gray-500 text-sm">Pembeli Puas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TESTI 2 - Rasa Nikmat -->
+          <div class="min-w-full p-6">
+            <div class="bg-white rounded-xl shadow-md p-6">
+              <div class="text-yellow-500 text-xl mb-3">★★★★★</div>
+              <p class="text-gray-700 italic mb-6">
+                "Rasanya nikmat banget, aromanya kuat dan aftertaste-nya lembut.
+                Saya suka banget buat seduh manual brew. Wajib repeat order!"
+              </p>
+
+              <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gray-300"></div>
+                <div class="ml-3">
+                  <h4 class="font-bold">Maya P.</h4>
+                  <p class="text-gray-500 text-sm">Pecinta Kopi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TESTI 3 - Pengiriman Cepat -->
+          <div class="min-w-full p-6">
+            <div class="bg-white rounded-xl shadow-md p-6">
+              <div class="text-yellow-500 text-xl mb-3">★★★★★</div>
+              <p class="text-gray-700 italic mb-6">
+                "Pengirimannya cepat dan tepat waktu. Packaging rapi, biji kopi
+                masih fresh banget pas sampai. Recommended!"
+              </p>
+
+              <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gray-300"></div>
+                <div class="ml-3">
+                  <h4 class="font-bold">Dodi H.</h4>
+                  <p class="text-gray-500 text-sm">Pelanggan Tetap</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Kiri -->
+        <button
+          id="prevBtn"
+          class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#4E342E] text-white px-3 py-2 rounded-full shadow-md hover:bg-[#3B2922]"
+        >
+          ‹
+        </button>
+
+        <!-- Tombol Kanan -->
+        <button
+          id="nextBtn"
+          class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#4E342E] text-white px-3 py-2 rounded-full shadow-md hover:bg-[#3B2922]"
+        >
+          ›
+        </button>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section class="text-gray-700 body-font" id="gallery">
+      <div
+        class="flex justify-center text-3xl font-bold text-[#4E342E] text-center py-10"
+      >
+        Gallery
+      </div>
+
+      <!-- MOBILE SLIDER 9:16 -->
+      <div class="relative overflow-hidden sm:block md:hidden max-w-xs mx-auto">
+        <div
+          id="gallerySlider"
+          class="flex transition-transform duration-700 ease-out"
+        >
+          <div class="w-full aspect-[9/16] flex-shrink-0">
+            <img
+              src="foto/1c56d37aa478823f3bba55dd804bf551.jpg"
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+
+          <div class="w-full aspect-[9/16] flex-shrink-0">
+            <img
+              src="foto/940bf157c4c4d308629cc81c7812cf9e.jpg"
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+
+          <div class="w-full aspect-[9/16] flex-shrink-0">
+            <img
+              src="foto/a1eedf4ec9b94a4156b40e47876b98e9.jpg"
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+
+          <div class="w-full aspect-[9/16] flex-shrink-0">
+            <img
+              src="foto/c1531dd5463ab88355619ccc4d7da4b9 (1).jpg"
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+        </div>
+
+        <button
+          id="prevBtnGallery"
+          class="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 shadow rounded-full"
+        >
+          ‹
+        </button>
+
+        <button
+          id="nextBtnGallery"
+          class="absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 shadow rounded-full"
+        >
+          ›
+        </button>
+      </div>
+
+      <!-- DESKTOP GRID (md+) -->
+      <div
+        class="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center"
+      >
+        <div class="group relative">
+          <img
+            src="foto/1c56d37aa478823f3bba55dd804bf551.jpg"
+            class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform group-hover:scale-105"
+          />
+        </div>
+
+        <div class="group relative">
+          <img
+            src="foto/940bf157c4c4d308629cc81c7812cf9e.jpg"
+            class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform group-hover:scale-105"
+          />
+        </div>
+
+        <div class="group relative">
+          <img
+            src="foto/a1eedf4ec9b94a4156b40e47876b98e9.jpg"
+            class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform group-hover:scale-105"
+          />
+        </div>
+
+        <div class="group relative">
+          <img
+            src="foto/c1531dd5463ab88355619ccc4d7da4b9 (1).jpg"
+            class="aspect-[2/3] h-80 object-cover rounded-lg transition-transform transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-100">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl font-extrabold text-gray-900" id="contactUs">
+            Contact & Location
+          </h2>
+          <p class="mt-3 text-lg text-gray-600">
+            Hubungi kami untuk pemesanan atau informasi produk kopi.
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Contact Card -->
+          <div class="bg-white rounded-xl shadow p-6 space-y-6">
+            <!-- Phone -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900">Kontak</h3>
+              <p class="text-gray-700 mt-1">
+                Telepon / WhatsApp:
+                <a
+                  href="https://wa.me/6283896738779"
+                  class="font-semibold text-[#4E342E] hover:underline"
+                >
+                  0838-9673-8779
+                </a>
+              </p>
+
+              <a
+                href="https://wa.me/6283896738779"
+                class="inline-flex items-center gap-2 mt-3 bg-[#4E342E] text-white px-4 py-2 rounded-lg shadow hover:bg-[#3B2922]"
+              >
+                Chat via WhatsApp
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Address -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900">Alamat</h3>
+              <p class="mt-1 text-gray-700">
+                Pengiriman dari banyumas, Jawa Tengah (Lokasi roasting &
+                penyimpanan)
+              </p>
+            </div>
+
+            <!-- Hours -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900">
+                Jam Operasional
+              </h3>
+              <p class="mt-1 text-gray-700">
+                Senin – Minggu: 08.00 – 21.00 Pengiriman setiap hari.
+              </p>
+            </div>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="rounded-xl overflow-hidden shadow">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63367.12928054618!2d109.2503666!3d-7.514937199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655edd1ab7687f%3A0x4027a76e35305b0!2sKec.%20Banyumas%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section>
+      <footer
+        class="bottom-10 left-0 right-0 p-4 border-t border-gray-300 text-center text-sm text-gray-600 dark:text-gray-400"
+      >
+        <p class="font-medium hover:text-blue-500 transition">
+          Yafi Gian · Web Developer
+        </p>
+        <p class="mt-1 opacity-80">© 2025 — landing-page, Contoh websites.</p>
+
+        <div class="flex justify-center gap-6 mt-4">
+          <!-- GitHub OFFICIAL -->
+          <a
+            href="https://github.com/yafigian3-hue"
+            target="_blank"
+            class="hover:opacity-70 transition"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-2c-3.3.7-4-1.4-4-1.4a3.1 
+                      3.1 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.5 2.5 0 0 1 1.9 
+                      1.3 2.6 2.6 0 0 0 3.5 1 2.6 2.6 0 0 1 .8-1.6c-2.7-.3-5.5-1.3-5.5-6a4.6 
+                      4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.1s1-.3 3.3 1.2a11.3 
+                      11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 
+                      .1 3.1 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6a2.9 
+                      2.9 0 0 1 .8 2.2v3.3c0 .3.2.6.8.5A12 12 0 0 0 12 .3z"
+              />
+            </svg>
+          </a>
+
+          <!-- WhatsApp OFFICIAL -->
+          <a
+            href="https://wa.me/6283896738779"
+            target="_blank"
+            class="hover:opacity-70 transition"
+          >
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor">
+              <path
+                d="M16 3a13 13 0 0 0-11.3 19.5L3 29l6-1.6A13 
+                      13 0 1 0 16 3zm7.7 18.2c-.3.9-1.7 1.6-2.4 
+                      1.6-.6 0-1.3 0-2.2-.3a18.3 18.3 0 0 1-3.5-1.6 
+                      16.1 16.1 0 0 1-5-5c-.2-.3-1.2-1.7-1.2-3.2s.7-2.3 1-2.6c.3-.3.6-.4.8-.4h.6c.2 
+                      0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5s-.2.4-.3.6-.2.2-.3.4-.1.3 
+                      0 .5a10.6 10.6 0 0 0 2 2.7 9 9 0 0 0 2.9 
+                      1.9c.2.1.4.1.6 0l.9-1c.2-.3.4-.3.7-.2l1.8.9c.2.1.6.3.7.4s.2.3.1.6z"
+              />
+            </svg>
+          </a>
+        </div>
+      </footer>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>

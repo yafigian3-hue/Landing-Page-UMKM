@@ -1,0 +1,4 @@
+/* Kunci scroll body saat menu aktif */
+.body-no-scroll {
+  overflow: hidden;
+}
